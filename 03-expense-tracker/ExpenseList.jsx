@@ -1,21 +1,21 @@
-function ExpenseList({ expenses, onDelete }) {
-  if (expenses.length === 0) {
-    return <p>No expenses recorded yet.</p>;
-  }
+// function ExpenseList({ expenses, onDelete }) {
+//   if (expenses.length === 0) {
+//     return <p>No expenses recorded yet.</p>;
+//   }
 
-  return (
-    <ul>
-      {expenses.map((expense) => (
-        <li key={expense.id}>
-          {expense.description} — ${expense.amount.toFixed(2)} ({expense.category})
-          <button onClick={() => onDelete(expense.id)}>Delete</button>
-        </li>
-      ))}
-    </ul>
-  );
-}
+//   return (
+//     <ul>
+//       {expenses.map((expense) => (
+//         <li key={expense.id}>
+//           {expense.description} — ${expense.amount.toFixed(2)} ({expense.category})
+//           <button onClick={() => onDelete(expense.id)}>Delete</button>
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// }
 
-export default ExpenseList;
+// export default ExpenseList;
 
 
 // 6 errors
@@ -53,17 +53,19 @@ export default ExpenseList;
 
 
 
-// function ExpenseList({expenses, onDelete})=>{
-//   if (expenses.length === 0) {
-//     return <p>No expenses made</p>
-//   }
-//   return (
-//     <ul>
-//     expenses.map((expense) => (
-//       <li key={expense.id} >{expense.description} -${expense.amount.toFixed(2)} ({expense.categories})
-//       <button onClick={()=> onDelete(expense.id)} ></button>
-//       </li>
-//     ))
-//     </ul>
-//   )
-// }
+
+
+
+function ExpenseList({expenses, onDelete}){
+if(expenses.length === 0){
+  <p>There is no amount here</p>
+}
+return (
+  <div>
+    <ul>
+      
+    </ul>
+  </div>
+)
+}
+export default ExpenseList
