@@ -1,26 +1,84 @@
-import { useState, useEffect } from 'react';
-import { useDebouncedValue } from './useDebouncedValue';
+// import { useState, useEffect } from 'react';
+// import { useDebouncedValue } from './useDebouncedValue';
 
-function SearchBar({ onDebouncedSearchChange }) {
-  const [rawQuery, setRawQuery] = useState('');
-  const debouncedQuery = useDebouncedValue(rawQuery, 300);
+// function SearchBar({ onDebouncedSearchChange }) {
+//   const [rawQuery, setRawQuery] = useState('');
+//   const debouncedQuery = useDebouncedValue(rawQuery, 300);
 
-  // Runs whenever debouncedQuery actually changes (not on every keystroke of rawQuery) -
-  // this is THE standard React pattern for "sync a value outward when it settles."
-  useEffect(() => {
-    onDebouncedSearchChange(debouncedQuery);
-  }, [debouncedQuery, onDebouncedSearchChange]);
+//   // Runs whenever debouncedQuery actually changes (not on every keystroke of rawQuery) -
+//   // this is THE standard React pattern for "sync a value outward when it settles."
+//   useEffect(() => {
+//     onDebouncedSearchChange(debouncedQuery);
+//   }, [debouncedQuery, onDebouncedSearchChange]);
 
-  return (
-    <input
-      aria-label="Search notes"
-      value={rawQuery}
-      onChange={(e) => setRawQuery(e.target.value)}
-      placeholder="Search notes..."
-    />
-  );
+//   return (
+//     <input
+//       aria-label="Search notes"
+//       value={rawQuery}
+//       onChange={(e) => setRawQuery(e.target.value)}
+//       placeholder="Search notes..."
+//     />
+//   );
+// }
+
+// export default SearchBar;
+
+// // 8 errors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { useState, useEffect } from "react";
+
+import {useDebouncedValue} from "./useDebouncedValue"
+
+function SearchBar({useDebouncedSearchChange}){
+const [rawQuery, setRawQuery] = useState('')
+const debouncedQuery = useDebouncedValue(rawQuery, 300)
+
+useEffect (()=>{
+  useDebouncedSearchChange(debouncedQuery)
+},[debouncedQuery, useDebouncedSearchChange])
+
+return (
+  <input type="text" value={rawQuery} onChange={(e)=> setRawQuery(e.target.value)} placeholder="type a note" />
+)
+
 }
-
-export default SearchBar;
-
-// 8 errors
+export default SearchBar
